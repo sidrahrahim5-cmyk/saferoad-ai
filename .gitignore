@@ -1,0 +1,23 @@
+# Environment variables - SECRET!
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+
+# Audio alerts
+static/alert_*.mp3
+
+# Uploaded images
+uploads/
+
+# VS Code
+.vscode/
+
+# Test files
+*.pyc
