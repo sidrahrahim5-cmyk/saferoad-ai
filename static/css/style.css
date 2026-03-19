@@ -1,0 +1,504 @@
+/* ============================================
+   Global Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f1117;
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.header {
+    background: #1a1d2e;
+    border-bottom: 1px solid #2d2f45;
+    padding: 16px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #e63946, #ff6b6b);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+}
+
+.logo-text h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.logo-text p {
+    font-size: 12px;
+    color: #8888aa;
+}
+
+.status-bar {
+    display: flex;
+    gap: 20px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #8888aa;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.green  { background: #4caf50; box-shadow: 0 0 6px #4caf50; }
+.dot.red    { background: #e63946; }
+.dot.orange { background: #ff9800; }
+
+/* ============================================
+   Main Layout
+   ============================================ */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+/* ============================================
+   Upload Section
+   ============================================ */
+.upload-section {
+    margin-bottom: 32px;
+}
+
+.upload-card {
+    background: #1a1d2e;
+    border: 1px solid #2d2f45;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.upload-card h2 {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.upload-card p {
+    color: #8888aa;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    color: #aaaacc;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: #0f1117;
+    border: 1px solid #2d2f45;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #e63946;
+}
+
+/* ============================================
+   Drop Zone
+   ============================================ */
+.drop-zone {
+    border: 2px dashed #2d2f45;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 20px;
+}
+
+.drop-zone:hover {
+    border-color: #e63946;
+    background: rgba(230, 57, 70, 0.05);
+}
+
+.drop-icon {
+    width: 48px;
+    height: 48px;
+    background: #2d2f45;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #8888aa;
+    margin: 0 auto 12px;
+}
+
+.drop-zone p {
+    color: #aaaacc;
+    margin-bottom: 4px;
+}
+
+.drop-zone small {
+    color: #666688;
+    font-size: 12px;
+}
+
+/* ============================================
+   Image Preview
+   ============================================ */
+.preview-container {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2d2f45;
+}
+
+.preview-container img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================
+   Analyze Button
+   ============================================ */
+.analyze-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.analyze-btn:hover    { opacity: 0.9; }
+.analyze-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ============================================
+   Loading
+   ============================================ */
+.loading {
+    text-align: center;
+    padding: 48px;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #2d2f45;
+    border-top-color: #e63946;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #8888aa;
+    font-size: 14px;
+}
+
+/* ============================================
+   Alert Banner
+   ============================================ */
+.alert-banner {
+    background: rgba(230, 57, 70, 0.15);
+    border: 1px solid #e63946;
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.8; }
+}
+
+.alert-icon {
+    width: 40px;
+    height: 40px;
+    background: #e63946;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.alert-content h3 {
+    color: #e63946;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.alert-content p {
+    color: #ccccdd;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* ============================================
+   Info Cards
+   ============================================ */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.info-card {
+    background: #1a1d2e;
+    border: 1px solid #2d2f45;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card-label {
+    font-size: 11px;
+    color: #666688;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* ============================================
+   Results Grid
+   ============================================ */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.result-card {
+    background: #1a1d2e;
+    border: 1px solid #2d2f45;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.result-header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-header.google { background: rgba(66, 133, 244, 0.15); border-bottom: 1px solid rgba(66, 133, 244, 0.3); }
+.result-header.aws    { background: rgba(255, 153, 0,   0.15); border-bottom: 1px solid rgba(255, 153, 0,   0.3); }
+.result-header.azure  { background: rgba(0,   120, 212, 0.15); border-bottom: 1px solid rgba(0,   120, 212, 0.3); }
+.result-header.tts    { background: rgba(76,  175, 80,  0.15); border-bottom: 1px solid rgba(76,  175, 80,  0.3); }
+
+.provider-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+}
+
+.result-header h3 {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.result-body {
+    padding: 20px;
+}
+
+.no-data {
+    color: #666688;
+    font-size: 13px;
+}
+
+/* ============================================
+   Label Items
+   ============================================ */
+.label-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #2d2f45;
+}
+
+.label-item:last-child {
+    border-bottom: none;
+}
+
+.label-name {
+    font-size: 13px;
+    color: #ccccdd;
+}
+
+.label-score {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.score-high   { background: rgba(76,  175, 80,  0.2); color: #4caf50; }
+.score-medium { background: rgba(255, 152, 0,   0.2); color: #ff9800; }
+.score-low    { background: rgba(158, 158, 158, 0.2); color: #9e9e9e; }
+
+/* ============================================
+   Severity Bar
+   ============================================ */
+.severity-item {
+    margin-bottom: 14px;
+}
+
+.severity-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #aaaacc;
+    margin-bottom: 6px;
+}
+
+.severity-bar {
+    height: 6px;
+    background: #2d2f45;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.severity-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.8s ease;
+}
+
+.fill-negative { background: #e63946; }
+.fill-positive { background: #4caf50; }
+
+.level-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.level-HIGH   { background: rgba(230, 57,  70,  0.2); color: #e63946; }
+.level-MEDIUM { background: rgba(255, 152, 0,   0.2); color: #ff9800; }
+.level-LOW    { background: rgba(76,  175, 80,  0.2); color: #4caf50; }
+
+/* ============================================
+   Audio Player
+   ============================================ */
+.audio-player {
+    margin-top: 8px;
+}
+
+.audio-player audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.audio-label {
+    font-size: 12px;
+    color: #8888aa;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    text-align: center;
+    padding: 24px;
+    border-top: 1px solid #2d2f45;
+    margin-top: 48px;
+}
+
+.footer p {
+    color: #666688;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .info-cards   { grid-template-columns: repeat(2, 1fr); }
+    .results-grid { grid-template-columns: 1fr; }
+    .status-bar   { display: none; }
+}
